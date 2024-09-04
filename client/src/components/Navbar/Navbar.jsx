@@ -9,7 +9,7 @@ const customStyles = {
   content: {
     top: "50%",
     left: "50%",
-    width:"500px",
+    width: "500px",
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
@@ -84,7 +84,7 @@ function Navbar() {
 
   return (
     <>
-    {/*
+      {/*
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -170,12 +170,12 @@ function Navbar() {
               Contact Us
             </Link>
           </div>
-          <div className="login-wrapper">
+          {/* <div className="login-wrapper">
             <button className="login-button" onClick={openModal}>
               login{" "}
               <img src={require("./assets/login-white.png")} alt="" />
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

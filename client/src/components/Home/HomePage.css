@@ -41,7 +41,7 @@
 
 .content-wrapper {
   width: 100%;
-  margin: 0 295px;
+  margin: 0 150px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -201,22 +201,21 @@
 }
 
 .bgVideo::-webkit-media-controls-play-button,
-    .bgVideo::-webkit-media-controls-start-playback-button {
-      display: none !important;
-    }
+.bgVideo::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
 
-    .bgVideo::-webkit-media-controls {
-      display: none !important;
-    }
+.bgVideo::-webkit-media-controls {
+  display: none !important;
+}
 
-    .bgVideo::media-controls {
-      display: none !important;
-    }
+.bgVideo::media-controls {
+  display: none !important;
+}
 
-    .bgVideo::-webkit-media-controls-playback-rate {
-      display: none !important;
-    }
-
+.bgVideo::-webkit-media-controls-playback-rate {
+  display: none !important;
+}
 
 @media screen and (max-width: 768px) {
   .logo-section {
