@@ -59,7 +59,7 @@ function Gallery() {
                   <img
                     className="gallery-image"
                     src={`https://utfs.io/f/${picture}`}
-                    loading="eager"
+                    loading="lazy"
                     onLoad={() => {
                       setLoading(false);
                       console.log(isLoading);
