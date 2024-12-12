@@ -19,7 +19,7 @@
   width: 100%;
   padding: 10px;
   display: flex;
-  margin: 0 295px;
+  margin: 0 100px;
   justify-content: space-between;
 }
 
@@ -111,8 +111,6 @@
   width: 100%;
 }
 
-
-
 .login-form {
   display: flex;
   flex-direction: column;
@@ -156,8 +154,6 @@
   cursor: pointer;
   width: 100%;
 }
-
-
 
 .error-message {
   color: red;

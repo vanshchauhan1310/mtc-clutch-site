@@ -57,17 +57,6 @@ function HomePage() {
     }, 100);
   }, []);
 
-
-    // Add event listener to disable right-click
-    const handleContextMenu = (e) => {
-      e.preventDefault();
-    };
-
-    document.addEventListener("contextmenu", handleContextMenu);
-
-    // Cleanup the event listener on component unmount
-
-
   const calculateIconPosition = (index, totalIcons, radius) => {
     const angle = (index / totalIcons) * 2 * Math.PI;
     // const centerX = window.innerWidth / 2;
@@ -79,7 +68,6 @@ function HomePage() {
 
   return (
     <>
-
       <video autoPlay muted loop id="myVideo" className="bgVideo" controls>
         <source src="bgVideo.mp4" type="video/mp4" />
       </video>
@@ -123,7 +111,7 @@ function HomePage() {
             <p>Technical</p>
             <p>Community</p>
             <div className="hero-buttons">
-            {/*
+              {/*
 
              <button className="register-button">
                 register <span className="arrow-right">&#x2192;</span>
@@ -131,11 +119,13 @@ function HomePage() {
           
             */}
 
-             <button className="register-button" onClick={()=> navigate("/current-event")}>
+              <button
+                className="register-button"
+                onClick={() => navigate("/current-event")}
+              >
                 Cognition 3.0 <span className="arrow-right">&#x2192;</span>
               </button>
-              
-               
+
               <button className="see-button">
                 see more <span className="arrow-right">&#x2192;</span>
               </button>
@@ -156,7 +146,10 @@ function HomePage() {
             <div className="line"></div>
             <div className="hero-buttons">
               {/* <Link to="/current-event" className="register-button"> */}
-              <button className="register-button" onClick={()=> navigate("/current-event")}>
+              <button
+                className="register-button"
+                onClick={() => navigate("/current-event")}
+              >
                 COGNITION 3.0<span className="arrow-right">&#x2192;</span>
               </button>
               {/* </Link> */}
