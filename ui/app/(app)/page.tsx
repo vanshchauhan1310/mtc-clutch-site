@@ -1,4 +1,5 @@
 "use client"
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import AboutUs from '@/content/about.mdx'
 import { MDXProvider } from '@mdx-js/react'
 import Image from 'next/image'
@@ -37,10 +38,10 @@ export default function Home() {
         </section>
         <section
           id="features"
-          className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24"
+          className="container space-y-6 text-center bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24"
         >
           <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-            <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+            <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
               About Us
             </h2>
             <MDXProvider>
@@ -53,9 +54,20 @@ export default function Home() {
           className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24"
         >
           <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-            <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+            <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
               Past Events
             </h2>
+            <Card>
+              <CardHeader>
+                Event Name
+              </CardHeader>
+              <CardContent>
+                Event Details
+              </CardContent>
+              <CardFooter>
+                Event Extra Details
+              </CardFooter>
+            </Card>
           </div>
         </section>
       </div>
