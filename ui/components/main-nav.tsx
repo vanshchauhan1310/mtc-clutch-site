@@ -6,9 +6,6 @@ export function MainNav() {
     return (
         <div className="mr-4 hidden md:flex">
             <nav className="flex items-center gap-4 text-sm xl:gap-6">
-                <Link href="/">
-                    Home
-                </Link>
                 <Link href="/contact">
                     Contact Us
                 </Link>
