@@ -1,23 +1,41 @@
-"use client"
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+import { CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import DotPattern from '@/components/ui/dot-pattern';
-import GridPattern from '@/components/ui/grid-pattern';
-import { WarpBackground } from '@/components/ui/warp-background';
-import AboutUs from '@/content/about.mdx'
+import { MagicCard } from '@/components/ui/magic-card';
+import matter from 'gray-matter'
 import { cn } from '@/lib/utils';
-import { MDXProvider } from '@mdx-js/react'
 import Image from 'next/image'
-import { useEffect, useRef } from 'react';
-import Typed from 'typed.js';
+import fs from 'fs'
+import path from 'path';
+import TypedText from '@/components/typed-text';
+import AboutUs from '@/content/about.mdx'
+import Link from 'next/link';
+// import { WarpBackground } from '@/components/ui/warp-background';
+
+interface BlogPost {
+  slug: string;
+  content: string;
+  [key: string]: any;
+}
+
+function getEventsBlogs(): BlogPost[] | undefined {
+  const eventsBlogsDirectoryPath = path.join(process.cwd(), 'events');
+  const fileNames = fs.readdirSync(eventsBlogsDirectoryPath)
+  return fileNames.map((fileName) => {
+    const slug = fileName.replace(/\.mdx$/, '')
+    const filePath = path.join(eventsBlogsDirectoryPath, fileName)
+    const fileContents = fs.readFileSync(filePath, 'utf-8')
+    const { content, data } = matter(fileContents)
+    return {
+      slug,
+      content,
+      ...data,
+    }
+  })
+}
+
 
 export default function Home() {
-  const el = useRef(null);
-  useEffect(() => {
-    const typed = new Typed(el.current, {
-      strings: ['<i>Welcome To,</i><br/><br/><span style="color: #F25022">Microsoft</span><br/><span style="color: #7FBA00">Technical</span><br/><span style="color: #00A4EF">Community.</span>'],
-      typeSpeed: 100,
-    });
-  }, []);
+  const blogs = getEventsBlogs()
 
   return (
     <>
@@ -31,7 +49,8 @@ export default function Home() {
           <div className="container relative z-10 flex max-w-[64rem] flex-row items-center justify-between gap-8">
             <div className="flex-1">
               <h1 className="font-bold text-left text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-                <span ref={el} />
+                {/* <span ref={el} /> */}
+                <TypedText />
               </h1>
             </div>
             <div className="flex-1">
@@ -53,33 +72,35 @@ export default function Home() {
             <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
               About Us
             </h2>
-            <MDXProvider>
+            <div className='text-white text-center'>
               <AboutUs />
-            </MDXProvider>
+            </div>
           </div>
         </section>
+        {/* <WarpBackground>
+          <div>Warp Test</div>
+        </WarpBackground> */}
         <section
 
           className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24"
         >
           <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-            <WarpBackground>
-              <div>Testing Warp</div>
-            </WarpBackground>
             <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
               Past Events
             </h2>
-            <Card>
-              <CardHeader>
-                Event Name
-              </CardHeader>
-              <CardContent>
-                Event Details
-              </CardContent>
-              <CardFooter>
-                Event Extra Details
-              </CardFooter>
-            </Card>
+            {blogs?.map((e, index) => (
+              <MagicCard key={index} className="w-full max-w-md mx-auto">
+                <CardHeader className="text-xl font-bold">{e.slug}</CardHeader>
+                <CardContent className="text-left">
+                  <p>{e.content.substring(0, 100)}...</p>
+                </CardContent>
+                <CardFooter className="text-right">
+                  <Link href={`/events/${e.slug}`} className="text-blue-500 hover:underline">
+                    Read more
+                  </Link>
+                </CardFooter>
+              </MagicCard>
+            ))}
           </div>
         </section>
         <section
