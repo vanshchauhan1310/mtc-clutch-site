@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function SiteFooter() {
     return (
-        <footer className="border-t border-grid py-6">
+        <footer className="border-t border-grid py-6 mt-auto w-full">
             <div className="container px-4">
                 <div className="flex flex-col items-center space-y-8 md:flex-row md:justify-between md:space-y-0">
                     {/* Contact Us Section */}

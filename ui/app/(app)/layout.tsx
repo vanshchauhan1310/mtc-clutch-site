@@ -14,7 +14,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
                 <SiteHeader />
             </div>
             <SidebarProvider>
-                <main className="flex flex-1 flex-col items-center justify-center md:mt-16">
+                <main className="flex flex-1 flex-col items-center pb-24 md:pb-0 md:mt-16 mb-auto">
                     <div className="block md:hidden">
                         <AppSidebar />
                     </div>
