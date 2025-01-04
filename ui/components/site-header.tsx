@@ -1,6 +1,7 @@
 import { MainNav } from "@/components/main-nav";
 import Image from "next/image";
 import Link from "next/link";
+import { Sidebar, SidebarProvider, SidebarTrigger } from "./ui/sidebar";
 
 export function SiteHeader() {
     return (
@@ -10,7 +11,10 @@ export function SiteHeader() {
                     <Link href="/" className="font-medium mx-4 text-sm">
                         <Image src="/logo.png" width={45} height={45} alt="MTC Logo" />
                     </Link>
-                    <MainNav />
+                    <div className="flex">
+                        <MainNav />
+                    </div>
+
                 </div>
             </div>
         </header>

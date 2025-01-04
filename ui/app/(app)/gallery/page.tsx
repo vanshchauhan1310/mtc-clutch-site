@@ -1,5 +1,10 @@
 export default function Gallery() {
-    return (<div>
-        This is Gallery Page
-    </div>)
+    return (
+        <>
+            <section>
+                <div>
+                    Gallery
+                </div>
+            </section>
+        </>)
 }
