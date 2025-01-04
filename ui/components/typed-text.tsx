@@ -8,7 +8,7 @@ const TypedText = () => {
 
     useEffect(() => {
         typed.current = new Typed(el.current, {
-            strings: ['<i>Welcome To,</i><br/><br/><span style="color: #F25022">Microsoft</span><br/><span style="color: #7FBA00">Technical</span><br/><span style="color: #00A4EF">Community.</span>'],
+            strings: ['<i>Welcome To,</i><br/><span style="color: #F25022">Microsoft</span><br/><span style="color: #7FBA00">Technical</span><br/><span style="color: #00A4EF">Community.</span>'],
             typeSpeed: 100,
         });
 
