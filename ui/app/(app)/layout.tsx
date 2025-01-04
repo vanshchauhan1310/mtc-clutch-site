@@ -7,9 +7,9 @@ interface AppLayoutProps {
 
 export default function AppLayout({ children }: AppLayoutProps) {
     return (
-        <div data-wrapper="" className="border-grid flex min-h-screen flex-1 flex-col">
+        <div className="border-grid flex min-h-screen flex-1 flex-col">
             <SiteHeader />
-            <main className="flex flex-1 flex-col">{children}</main>
+            <main className="flex flex-1 flex-col items-center justify-center">{children}</main>
             <SiteFooter />
         </div>
     )
