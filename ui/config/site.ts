@@ -162,7 +162,7 @@ export const teamConfig = {
                 },
                 {
                     name: "Anish Kothiyal",
-                    linedin: "",
+                    linkedin: "",
                     image: "Anish.jpg"
                 },
                 {
