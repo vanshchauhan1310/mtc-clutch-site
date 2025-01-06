@@ -1,3 +1,10 @@
+---
+title: Hello This is frontmatter test
+description: This is about web portfolio event happend in upes The workshop received overwhelming response with over 220 registrations. Participants who successfully completed their portfolio websites received completion certificates. The positive feedback and requests for similar workshops highlighted the event's success in providing practical web development skills to enthusiasts.
+date: 26 August 2024
+thumbnail: akari_akaza.png
+---
+
 # Web Portfolio Workshop
 
 Microsoft Technical Community organized a comprehensive two-day online workshop on building portfolio websites using Visual Studio Code. The workshop, our first for the Aug-Dec session, ran from 2 PM to 5 PM on both days.
@@ -19,9 +26,11 @@ Following the workshop, participants were given a 10-day project assignment to b
 The workshop received overwhelming response with over 220 registrations. Participants who successfully completed their portfolio websites received completion certificates. The positive feedback and requests for similar workshops highlighted the event's success in providing practical web development skills to enthusiasts.
 
 ## Code Test
+
 ```haskell
 let fac n = if n == 0 then 1 else n * fac (n-1)
 ```
 
 ## Image Test
+
 ![alt text](akari_akaza.png)
