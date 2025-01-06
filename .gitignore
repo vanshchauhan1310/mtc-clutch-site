@@ -24,7 +24,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-ui/.pnp
+.pnp
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -36,11 +36,11 @@ ui/.pnp
 ui/coverage
 
 # next.js
-ui/.next/
-ui/out/
+.next/
+out/
 
 # production
-ui/build
+build
 
 # misc
 .DS_Store
