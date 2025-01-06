@@ -1,12 +1,7 @@
 "use client";
 
 import React, { useState, useCallback, useEffect } from "react";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
+import { CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { MagicCard } from "@/components/ui/magic-card";
 import Link from "next/link";
 import Image from "next/image";

@@ -4,8 +4,10 @@ import { TracingBeam } from "@/components/ui/tracing-beam";
 import { serializeMdFileContent } from "@/lib/fileUtils";
 import { CustomMdComponents } from "@/components/md-components";
 
-export default function Events({ params }: { params: { slugs: string } }) {
-  const { slugs } = params;
+export type paramsType = Promise<{ slugs: string }>;
+
+export default async function Events(props: { params: paramsType }) {
+  const { slugs } = await props.params;
   try {
     const mdData = serializeMdFileContent(slugs, "events");
     return (

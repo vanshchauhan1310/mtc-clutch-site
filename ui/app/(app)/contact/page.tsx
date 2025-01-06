@@ -26,7 +26,7 @@ export default function ContactPage() {
             <CardHeader>
               <CardTitle>Send us a Message</CardTitle>
               <CardDescription>
-                Fill out the form below and we'll get back to you as soon as
+                Fill out the form below and we will get back to you as soon as
                 possible.
               </CardDescription>
             </CardHeader>
@@ -40,7 +40,7 @@ export default function ContactPage() {
             <Card className="shadow-lg">
               <CardHeader>
                 <CardTitle>Meet Us</CardTitle>
-                <CardDescription>Here's how you can reach us</CardDescription>
+                <CardDescription>Here is how you can reach us</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-start space-x-4">

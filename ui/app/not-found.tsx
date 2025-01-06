@@ -17,7 +17,7 @@ export default function NotFound() {
         </h2>
         <p className="text-white mb-8">
           {" "}
-          The page you're looking for doesn't seem to exist.
+          The page you are looking for does not seem to exist.
         </p>
         <Image
           className="mx-auto rounded-xl shadow-lg"
