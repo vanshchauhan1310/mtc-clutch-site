@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="container px-4">
         <div className="flex flex-col items-center space-y-8 md:flex-row md:justify-between md:space-y-0">
           {/* Contact Us Section */}
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left pl-4">
             <div className="text-white font-semibold text-lg mb-4">
               Contact Us
             </div>
@@ -28,7 +28,7 @@ export function SiteFooter() {
           <div className="text-center md:text-left">
             <div className="text-white font-semibold text-lg mb-4">Socials</div>
             <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row md:gap-4">
-              <div className="flex items-center gap-2">
+              <div className="flex flex-row items-center gap-2">
                 <svg
                   data-testid="geist-icon"
                   height="16"

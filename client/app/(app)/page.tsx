@@ -1,6 +1,5 @@
 import { MagicCard } from "@/components/ui/magic-card";
 import Image from "next/image";
-import TypedText from "@/components/typed-text";
 import { siteConfig } from "@/config/site";
 import SparklesText from "@/components/ui/sparkles-text";
 import { BorderBeam } from "@/components/ui/border-beam";
@@ -12,31 +11,36 @@ import { getAllSerializedMdFilesInDir } from "@/lib/fileUtils";
 
 export default function Home() {
   const events_dir: string = "events"; //TODO Add it to config
-  const blogs = getAllSerializedMdFilesInDir(events_dir);
+  const blogs: BlogPost[] = getAllSerializedMdFilesInDir(events_dir);
 
   return (
     <>
-      {/* Intro Section */}
+      {/* Hero Section */}
       <div className="h-[50rem] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
         {/* Radial gradient for the container to give a faded look */}
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
         <section className="relative flex min-h-[70vh] items-center justify-center">
-          <div className="container relative z-10 flex max-w-[64rem] flex-col items-center justify-center gap-8 px-4 sm:flex-row sm:justify-between">
-            <div className="flex-1 w-full sm:w-[500px] text-center sm:text-left">
-              <h1 className="font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl min-h-[200px] sm:min-h-[144px] md:min-h-[156px] lg:min-h-[180px]">
-                <TypedText />
-              </h1>
+          <div className="relative w-full h-full">
+            <div className="absolute z-10 w-full h-full flex items-center justify-center">
+              <div className="flex flex-col text-white font-bold text-8xl">
+                <div>Microsoft</div>
+                <div>Technical</div>
+                <div>Community</div>
+              </div>
             </div>
-            <div className="w-full sm:w-[490px] flex-shrink-0">
-              <Image
-                src="/team_image.jpeg"
-                alt="MTC Team Image"
-                width={500}
-                height={500}
-                className="rounded-lg"
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+            >
+              <source
+                src="/assests/hero_background_video.mp4"
+                type="video/mp4"
               />
-            </div>
+            </video>
           </div>
         </section>
       </div>
