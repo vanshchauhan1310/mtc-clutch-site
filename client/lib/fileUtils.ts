@@ -91,5 +91,17 @@ export async function getAllSerializedMdFilesInDir(fileDirName: string): Promise
     return Promise.all(files.map((file) => serializeMdFileContent(file, fileDirName)));
 }
 
-export async function getAllImagesNameInDir(fileDirName: string): Promise<string[]> {
-    const imageDirPath = path.join(process.cwd(), `public/${fileDir
+export async function getAllImagesNameInDir(fileDirName: string): Promise<string[]>{
+    const imageDirPath = path.join(process.cwd(),`public/${fileDirName}`)
+    if (await !fs.promises.access(imageDirPath)){
+        throw new Error('This Gallery Directory does not exist')
+    }
+    const images: string[] =  (await fs.promises.readdir(imageDirPath,'utf-8')).filter((items) => 
+        items.endsWith('JPG') || 
+        items.endsWith('jpeg') || 
+        items.endsWith('png') || 
+        items.endsWith('webm') || 
+        items.endsWith('jpg')
+    )
+    return images
+}
