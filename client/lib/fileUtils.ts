@@ -1,6 +1,3 @@
-// File Utilities for handling markdown files
-// Logic and code written by Shubhang Sharma 2025
-
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -29,14 +26,13 @@ async function fileExists(filePath: string): Promise<boolean> {
 
 async function getMdFileContent(fileName: string, fileDirName: string): Promise<string> {
     const filePath = path.join(process.cwd(), fileDirName, fileName);
-    if (!await mdFileExists(fileName, fileDirName)) {
+    if (!await fileExists(filePath)) {
         throw new Error('This is not a valid Markdown file. Please check file extension!');
     }
 
     try {
         return await fs.promises.readFile(filePath, 'utf-8');
     } catch (error) {
-        // Type assertion to handle the unknown type
         const err = error as Error;
         console.error('Error reading file:', err);
         throw new Error(`Failed to read file "${fileName}": ${err.message}`);
@@ -96,11 +92,4 @@ export async function getAllSerializedMdFilesInDir(fileDirName: string): Promise
 }
 
 export async function getAllImagesNameInDir(fileDirName: string): Promise<string[]> {
-    const imageDirPath = path.join(process.cwd(), `public/${fileDirName}`);
-    if (!await fileExists(imageDirPath)) {
-        throw new Error(`Gallery directory "${fileDirName}" does not exist.`);
-    }
-
-    const images = await fs.promises.readdir(imageDirPath);
-    return images.filter((item) => /\.(jpg|jpeg|png|webm)$/i.test(item));
-}
+    const imageDirPath = path.join(process.cwd(), `public/${fileDir
