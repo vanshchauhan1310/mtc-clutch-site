@@ -29,15 +29,17 @@ async function fileExists(filePath: string): Promise<boolean> {
 
 async function getMdFileContent(fileName: string, fileDirName: string): Promise<string> {
     const filePath = path.join(process.cwd(), fileDirName, fileName);
-    if (!await fileExists(filePath)) {
-        throw new Error(`Markdown file "${fileName}" does not exist in "${fileDirName}".`);
+    if (!await mdFileExists(fileName, fileDirName)) {
+        throw new Error('This is not a valid Markdown file. Please check file extension!');
     }
 
     try {
         return await fs.promises.readFile(filePath, 'utf-8');
     } catch (error) {
-        console.error('Error reading file:', error);
-        throw new Error(`Failed to read file "${fileName}": ${error.message}`);
+        // Type assertion to handle the unknown type
+        const err = error as Error;
+        console.error('Error reading file:', err);
+        throw new Error(`Failed to read file "${fileName}": ${err.message}`);
     }
 }
 
