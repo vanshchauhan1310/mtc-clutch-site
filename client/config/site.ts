@@ -33,12 +33,14 @@ export const teamConfig = {
                 {
                     name: "Ram Kumar",
                     linkedin: "",
-                    image: "Dr Ram Kumar PP Latest.png"
+                    image: "Dr Ram Kumar PP Latest.png",
+                    role: ""
                 },
                 {
                     name: "Keshav Sinha",
                     linkedin: "https://www.linkedin.com/in/dr-keshav-sinha-a764b01ba",
-                    image: "keshav.jpeg"
+                    image: "keshav.jpeg",
+                    role: ""
                 }
             ]
         },
@@ -48,27 +50,32 @@ export const teamConfig = {
                 {
                     name: "Aditya Kumar",
                     linkedin: "https://www.linkedin.com/in/aditya-kumar-220053208/",
-                    image: "aditya.png"
+                    image: "aditya.png",
+                    role: ""
                 },
                 {
                     name: "Sanidhya Soni",
                     linkedin: "https://www.linkedin.com/in/sanidhya-soni/",
-                    image: "sanidhya soni.png"
+                    image: "sanidhya soni.png",
+                    role: ""
                 },
                 {
                     name: "Yash Raj Singh",
                     linkedin: "https://www.linkedin.com/in/yash-raj-singh-yrs/",
-                    image: "y1.png"
+                    image: "y1.png",
+                    role: ""
                 },
                 {
                     name: "Rishabh Dhangar",
                     linkedin: "https://www.linkedin.com/in/rishabh-dhangar/",
-                    image: "rishabh.png"
+                    image: "rishabh.png",
+                    role: ""
                 },
                 {
                     name: "Tanish Garg",
                     linkedin: "https://www.linkedin.com/in/tanish-garg-5114aa236/",
-                    image: "tanish.jpeg"
+                    image: "tanish.jpeg",
+                    role: ""
                 }
             ]
         },
@@ -78,27 +85,32 @@ export const teamConfig = {
                 {
                     name: "Vibhor Minocha",
                     linkedin: "https://www.linkedin.com/in/vibhor-minocha-513b32220/",
-                    image: "Vibhor_Minocha.jpg"
+                    image: "Vibhor_Minocha.jpg",
+                    role: "President"
                 },
                 {
                     name: "Siddhant Srivastava",
                     linkedin: "https://www.linkedin.com/in/siddhantsrivastava21/",
-                    image: "Siddhant_Srivastava.jpeg"
+                    image: "Siddhant_Srivastava.jpeg",
+                    role: "Vice President"
                 },
                 {
                     name: "Ananya Singh",
                     linkedin: "https://www.linkedin.com/in/ananya-singh-15r25-8r1/",
-                    image: "Ananya_singh.jpg"
+                    image: "Ananya_singh.jpg",
+                    role: "Director of Operations"
                 },
                 {
                     name: "Rajat Bisht",
                     linkedin: "https://www.linkedin.com/in/rajat-bisht-25b208237/",
-                    image: "Rajat_Bisht.jpg"
+                    image: "Rajat_Bisht.jpg",
+                    role: "Managerial Director"
                 },
                 {
                     name: "Mimansa Pathania",
                     linkedin: "https://www.linkedin.com/in/mimansa-pathania-3b38a2223/",
-                    image: "miamansa.jpeg"
+                    image: "miamansa.jpeg",
+                    role: "Treasurer"
                 }
             ]
         },
@@ -108,17 +120,20 @@ export const teamConfig = {
                 {
                     name: "Hamzaa Bin Saleem",
                     linkedin: "https://www.linkedin.com/in/hamza-bin-saleem-b80917241/",
-                    image: "hamza.jpeg"
+                    image: "hamza.jpeg",
+                    role: "Event Head Advisor"
                 },
                 {
                     name: "Insiya Rizvi",
                     linkedin: "https://www.linkedin.com/in/insiya-rizvi-118702178/",
-                    image: "Insiya.jpeg"
+                    image: "Insiya.jpeg",
+                    role: "Management & Records Advisor"
                 },
                 {
                     name: "Shresth Pandey",
                     linkedin: "https://www.linkedin.com/in/shresth-pandey-488b10229/",
-                    image: "Shresth_Pandey.png"
+                    image: "Shresth_Pandey.png",
+                    role: "Public Relation Advisor"
                 },
             ]
         },
@@ -128,77 +143,92 @@ export const teamConfig = {
                 {
                     name: "Hardik Raj Kappor",
                     linkedin: "https://www.linkedin.com/in/hardik-raj-kapoor-03a680183/",
-                    image: "Hardik.png"
+                    image: "Hardik.png",
+                    role: "Internal Operation Head"
                 },
                 {
                     name: "Vedanshi Samant",
                     linkedin: "https://www.linkedin.com/in/vedanshi-samant-709879278/",
-                    image: "Vedanshi.jpeg"
+                    image: "Vedanshi.jpeg",
+                    role: "Joint Secrectry"
                 },
                 {
                     name: "Priyanshu Butola",
                     linkedin: "https://www.linkedin.com/in/priyanshu-butola/",
-                    image: "priyanshu.jpg"
+                    image: "priyanshu.jpg",
+                    role: "Technical Head"
                 },
                 {
                     name: "Vansh Raj Chauhan",
                     linkedin: "https://www.linkedin.com/in/vansh-raj-chauhan-64b50a258/",
-                    image: "Vansh_Raj_Chauhan.jpg"
+                    image: "Vansh_Raj_Chauhan.jpg",
+                    role: "Technical Head"
                 },
                 {
                     name: "Shambhavee Srivastav",
                     linkedin: "https://www.linkedin.com/in/shambhavee-srivastava-973494278/",
-                    image: "Shambhavee_Srivastava.jpg"
+                    image: "Shambhavee_Srivastava.jpg",
+                    role: "Technical Associate Head"
                 },
                 {
                     name: "Kanishka Tomar",
                     linkedin: "https://www.linkedin.com/in/kanishka-tomar-645174257/",
-                    image: "kanishka2.jpeg"
+                    image: "kanishka2.jpeg",
+                    role: "Technical Associate Head"
                 },
                 {
                     name: "Sanya Sinha",
                     linkedin: "https://www.linkedin.com/in/sanya-sinha-a859ab244/",
-                    image: "Sanya_Sinha.jpg"
+                    image: "Sanya_Sinha.jpg",
+                    role: "Design Head"
                 },
                 {
                     name: "Anish Kothiyal",
                     linkedin: "",
-                    image: "Anish.jpg"
+                    image: "Anish.jpg",
+                    role: "Design Associate Head"
                 },
                 {
                     name: "Samriddh Sharma",
                     linkedin: "https://www.linkedin.com/in/samriddh-sharma-754565258/",
-                    image: "Samridhh.jpeg"
+                    image: "Samridhh.jpeg",
+                    role: "Management and Record Head"
                 },
                 {
                     name: "Yashpal Singh",
                     linkedin: "https://www.linkedin.com/in/yashpal-singh-230072262/",
-                    image: "yashpal.jpeg"
+                    image: "yashpal.jpeg",
+                    role: "Management and Record Associate Head"
                 },
                 {
                     name: "Isha Yadav",
                     linkedin: "https://www.linkedin.com/in/isha-yadav-4ab73a2a7/",
-                    image: "Isha_Yadav.jpg"
+                    image: "Isha_Yadav.jpg",
+                    role: "Management and Record Associate Head"
                 },
                 {
                     name: "Swati pal",
                     linkedin: "http://www.linkedin.com/in/swati-pal-upes",
-                    image: "swati_Pal.jpg"
+                    image: "swati_Pal.jpg",
+                    role: "Editorial Head"
                 },
                 {
                     name: "Kunal Sharma",
                     linkedin: "https://www.linkedin.com/in/kunal-shubh-sharma-6303a72a7/",
-                    image: "Kunal_Sharma.jpg"
+                    image: "Kunal_Sharma.jpg",
+                    role: "Editorial Associate Head"
                 },
                 {
                     name: "Chaitanya",
                     linkedin: "https://www.linkedin.com/in/chetanya-jain-838016210/",
-                    image: "chetanya.jpeg"
+                    image: "chetanya.jpeg",
+                    role: "Public Relation Head"
                 },
                 {
                     name: "Saarthak Gupta",
                     linkedin: "https://www.linkedin.com/in/saarthak-gupta-11677b268/",
-                    image: "Sarthak3.png"
+                    image: "Sarthak3.png",
+                    role: "Public Relation Associate Head"
                 }
             ]
         },
@@ -208,17 +238,20 @@ export const teamConfig = {
                 {
                     name: "Rashi Trikha",
                     linkedin: "https://www.linkedin.com/in/rashi-trikha-0832391a9/",
-                    image: "Rashi.jpg"
+                    image: "Rashi.jpg",
+                    role: ""
                 },
                 {
                     name: "Kartikey Khanna",
                     linkedin: "https://www.linkedin.com/in/kartikeya-khanna-1274b7194/",
-                    image: "Kartikeya.jpg"
+                    image: "Kartikeya.jpg",
+                    role: ""
                 },
                 {
                     name: "Vishal Gupta",
                     linkedin: "https://www.linkedin.com/in/vishal-gupta-6b6123194/",
-                    image: "Vishal1.webp"
+                    image: "Vishal1.webp",
+                    role: ""
                 }
             ]
         }

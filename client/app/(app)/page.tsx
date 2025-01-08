@@ -76,9 +76,10 @@ export default function Home() {
 
         <section className="container relative z-20 w-full max-w-7xl mx-auto">
           <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-8 text-center">
-            <h2 className="font-bold text-white text-3xl sm:text-4xl md:text-6xl">
-              Past Events
-            </h2>
+            <SparklesText
+              className="text-3xl sm:text-4xl lg:text-5xl text-center"
+              text="Past Events"
+            />
             {blogs && <EventsCarousel blogs={blogs} />}
           </div>
         </section>
@@ -91,7 +92,7 @@ export default function Home() {
         <section className="container relative z-20 w-full max-w-7xl mx-auto py-8 sm:py-16">
           <div className="mx-auto flex max-w-[72rem] flex-col items-center space-y-12">
             <SparklesText
-              className="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight lg:text-5xl text-center"
+              className="text-3xl sm:text-4xl lg:text-5xl text-center"
               text="Our Sponsors"
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full">

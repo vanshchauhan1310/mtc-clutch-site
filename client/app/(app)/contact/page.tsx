@@ -17,7 +17,7 @@ export default function ContactPage() {
       <div className="container relative z-10 mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
-          <p className="text-muted-foreground">Get in touch with us hehe</p>
+          <p className="text-muted-foreground">Get in touch with us !</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">

@@ -1,36 +1,23 @@
 "use client";
 
 import React, { useState, useCallback, useEffect } from "react";
-import { CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { MagicCard } from "@/components/ui/magic-card";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion"; // Add framer-motion for smooth animations
-
-interface FrontMatter {
-  title: string;
-  description: string;
-  date: string;
-  thumbnail: string;
-}
-
-interface BlogPost {
-  slug: string;
-  frontMatter: FrontMatter;
-}
+import { motion, AnimatePresence } from "framer-motion";
 
 const EventsCarousel: React.FC<{ blogs: BlogPost[] }> = ({ blogs }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  // Auto-play functionality
   useEffect(() => {
     if (!isAutoPlaying) return;
 
     const timer = setInterval(() => {
       handleSlide("next");
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
 
     return () => clearInterval(timer);
   }, [currentIndex, isAutoPlaying]);
@@ -48,7 +35,6 @@ const EventsCarousel: React.FC<{ blogs: BlogPost[] }> = ({ blogs }) => {
     [blogs.length]
   );
 
-  // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") handleSlide("prev");
@@ -61,11 +47,11 @@ const EventsCarousel: React.FC<{ blogs: BlogPost[] }> = ({ blogs }) => {
 
   return (
     <div
-      className="relative w-full max-w-2xl mx-auto"
+      className="relative w-full max-w-5xl mx-auto px-4 sm:px-6"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
-      <div className="overflow-hidden px-4 py-6">
+      <div className="overflow-hidden py-4 sm:py-8">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
@@ -74,61 +60,44 @@ const EventsCarousel: React.FC<{ blogs: BlogPost[] }> = ({ blogs }) => {
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.3 }}
           >
-            <MagicCard className="items-center justify-center opacity-95 w-full max-w-md mx-auto rounded-[20px] shadow-[0_4px_10px_rgba(255,255,255,0.3),0_-4px_10px_rgba(255,255,255,0.3)] hover:shadow-[0_8px_20px_rgba(255,255,255,0.4),0_-8px_20px_rgba(255,255,255,0.4)] transition-all duration-300">
-              <CardHeader className="space-y-4">
-                <div className="relative w-full h-56 rounded-sm overflow-hidden group">
+            <MagicCard className="opacity-95 w-full rounded-lg sm:rounded-[20px] transition-all duration-300">
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 p-4 sm:p-6">
+                <div className="flex-1 text-center sm:text-left">
+                  <h2 className="text-2xl sm:text-4xl font-bold text-white mb-2">
+                    {blogs[currentIndex].frontMatter.title}
+                  </h2>
+                  <p className="text-xs sm:text-sm text-gray-300 mb-2">
+                    {blogs[currentIndex].frontMatter.date}
+                  </p>
+                  <p className="text-sm sm:text-base text-gray-100 mb-4">
+                    {blogs[currentIndex].frontMatter.description}
+                  </p>
+                  <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all duration-200">
+                    <Link
+                      href={`/events/${blogs[currentIndex].slug}`}
+                      className="flex items-center gap-2"
+                    >
+                      View Event
+                      <ExternalLink className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                </div>
+                <div className="w-full sm:w-auto flex-shrink-0">
                   <Image
                     src={`/${blogs[currentIndex].frontMatter.thumbnail}`}
                     alt={blogs[currentIndex].frontMatter.title}
-                    fill
-                    priority
-                    sizes="(max-width: 768px) 100vw, 500px"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    width={500}
+                    height={500}
+                    className="rounded-lg object-cover w-full h-48 sm:h-auto sm:w-[500px]"
                   />
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
-                    {blogs[currentIndex].frontMatter.title}
-                  </h3>
-                  <time
-                    dateTime={blogs[currentIndex].frontMatter.date}
-                    className="text-sm text-gray-200 text-end block"
-                  >
-                    {blogs[currentIndex].frontMatter.date}
-                  </time>
-                </div>
-              </CardHeader>
-
-              <CardContent>
-                <p className="text-gray-300 text-center leading-relaxed">
-                  {blogs[currentIndex].frontMatter.description}
-                </p>
-              </CardContent>
-
-              <CardFooter className="flex justify-center items-center p-4">
-                <Link
-                  href={`/events/${encodeURIComponent(
-                    blogs[currentIndex].slug
-                  )}`}
-                  className="text-blue-400 hover:text-blue-300 hover:underline text-lg inline-flex items-center transition-colors duration-200"
-                  aria-label={`Read more about ${blogs[currentIndex].frontMatter.title}`}
-                >
-                  <span className="flex items-center gap-2">
-                    Read more{" "}
-                    <ExternalLink
-                      className="animate-bounce"
-                      aria-hidden="true"
-                    />
-                  </span>
-                </Link>
-              </CardFooter>
+              </div>
             </MagicCard>
           </motion.div>
         </AnimatePresence>
       </div>
 
-      {/* Navigation dots */}
-      <div className="flex justify-center gap-2 mt-4">
+      <div className="flex justify-center gap-2 mt-4 sm:mt-6">
         {blogs.map((_, index) => (
           <button
             key={index}
@@ -143,17 +112,17 @@ const EventsCarousel: React.FC<{ blogs: BlogPost[] }> = ({ blogs }) => {
 
       <button
         onClick={() => handleSlide("prev")}
-        className="absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transform -translate-x-1/2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 hover:scale-110"
+        className="absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transform translate-x-1 sm:-translate-x-1/2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 hover:scale-110 z-10"
         aria-label="Previous event"
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
       </button>
       <button
         onClick={() => handleSlide("next")}
-        className="absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transform translate-x-1/2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 hover:scale-110"
+        className="absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transform -translate-x-1 sm:translate-x-1/2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 hover:scale-110 z-10"
         aria-label="Next event"
       >
-        <ChevronRight className="w-6 h-6" />
+        <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
       </button>
     </div>
   );

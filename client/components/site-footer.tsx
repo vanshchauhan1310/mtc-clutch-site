@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import { Copyright, CopyrightIcon } from "lucide-react";
 import Link from "next/link";
 
 export function SiteFooter() {
@@ -22,6 +23,13 @@ export function SiteFooter() {
                 <strong>Email:</strong> {siteConfig.email}
               </div>
             </div>
+          </div>
+          <div className="text-sm text-center flex md:text-center gap-2">
+            <Copyright className="h-4 w-4" />
+            <span>
+              {new Date().getUTCFullYear()} {siteConfig.name}. All rights
+              reserved.
+            </span>
           </div>
 
           {/* Socials Section */}
