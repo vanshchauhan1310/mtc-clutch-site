@@ -13,8 +13,8 @@ import {
 import { GalleryIcon } from "@/components/gallery-icon";
 import { ZoomIn } from "lucide-react";
 
-export default function Gallery() {
-  const images = getAllImagesNameInDir("gallery");
+export default async function Gallery() {
+  const images = await getAllImagesNameInDir("gallery");
 
   return (
     <div className="min-h-screen w-full dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">

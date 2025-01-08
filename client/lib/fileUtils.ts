@@ -6,28 +6,29 @@ import path from 'path'
 import matter from "gray-matter";
 
 
-function mdFileExists(fileName: string, fileDirName: string): boolean {
-   
-const filePath = path.join(process.cwd(),fileDirName,fileName)
-if (fs.existsSync(filePath)){
-    return true
-}
-return false
+async function mdFileExists(fileName: string, fileDirName: string): Promise<boolean> {
+    const filePath = path.join(process.cwd(), fileDirName, fileName);
+    try {
+        await fs.promises.access(filePath);
+        return true;
+    } catch {
+        return false;
+    }
 }
 
-function getMdFileContent(fileName: string, fileDirName: string): string | undefined {
-    if (!mdFileExists(fileName,fileDirName))
-    {
-        throw new Error('This is not ReadMe File File Please Check File Extension !')
+async function getMdFileContent(fileName: string, fileDirName: string): Promise<string> {
+    if (!mdFileExists(fileName, fileDirName)) {
+        throw new Error('This is not a valid Markdown file. Please check file extension!');
     }
+    
+    const filePath = path.join(process.cwd(), fileDirName, fileName);
     try {
-    const filePath = path.join(process.cwd(),fileDirName,fileName); 
-    const fileContent = fs.readFileSync(filePath,'utf-8')
-    return fileContent
-    } catch (error){
-        console.log(error)
+        const fileContent = await fs.promises.readFile(filePath, 'utf-8');
+        return fileContent;
+    } catch (error) {
+        console.error('Error reading file:', error);
+        throw error;
     }
-    return
 }
 
 function getFrontMatter(fileContent: string): FrontMatterInterface {
@@ -51,17 +52,17 @@ function getMdContent(fileContent: string): string {
     return mdContent
 }
 
-function getMdFilesInDir(fileDirName: string): string[] {
+async function getMdFilesInDir(fileDirName: string): Promise<string[]> {
     const directoryPath = path.join(process.cwd(),fileDirName)
-    if (!fs.existsSync(directoryPath)){
+    if (await !fs.promises.access(directoryPath)){
         throw new Error('This Directory Does Not Exist')
     }
-    const dirData = fs.readdirSync(directoryPath,'utf-8')
+    const dirData = await fs.promises.readdir(directoryPath,'utf-8')
     const mdFiles = dirData.filter((val) => (val.endsWith('.md')))
     return mdFiles
 }
 
-export function serializeMdFileContent(fileName: string,fileDirName: string): BlogPost{
+export async function serializeMdFileContent(fileName: string,fileDirName: string): Promise<BlogPost>{
     // If FileName is encoded URI We Will First decode it
     fileName = decodeURI(fileName)
     if (!fileName.endsWith('md')){
@@ -69,12 +70,12 @@ export function serializeMdFileContent(fileName: string,fileDirName: string): Bl
         fileName = `${fileName}.md` 
     }
     // Getting All the MD File Content
-    const fileContent = getMdFileContent(fileName,fileDirName)
+    const fileContent = await getMdFileContent(fileName,fileDirName)
     if (!fileContent){
             throw new Error('This ReadMe File is Empty Failed to serialize')
         }
     // Getting All the MD Front Matter Content
-    const frontMatter = getFrontMatter(fileContent);
+    const frontMatter =  getFrontMatter(fileContent);
     // Getting All the MD Data Content
     const mdContent = getMdContent(fileContent)
 
@@ -83,22 +84,27 @@ export function serializeMdFileContent(fileName: string,fileDirName: string): Bl
     return { slug, frontMatter , mdContent };
 }
 
-export function getAllSerializedMdFilesInDir(fileDirName: string): BlogPost[] {
-    const directoryPath = path.join(process.cwd(),fileDirName)
-    if (!fs.existsSync(directoryPath)){
-    throw new Error('This Readme Directory does not exist')
-}
-    const files = getMdFilesInDir(fileDirName)
-    const blogPostData: BlogPost[] = files.map((file) => serializeMdFileContent(file,fileDirName))
-    return blogPostData
+export async function getAllSerializedMdFilesInDir(fileDirName: string): Promise<BlogPost[]> {
+    const directoryPath = path.join(process.cwd(), fileDirName);
+    try {
+        await fs.promises.access(directoryPath);
+    } catch {
+        throw new Error('This Readme Directory does not exist');
+    }
+
+    const files = await getMdFilesInDir(fileDirName);
+    const blogPostData = await Promise.all(
+        files.map((file) => serializeMdFileContent(file, fileDirName))
+    );
+    return blogPostData;
 }
 
-export function getAllImagesNameInDir(fileDirName: string): string[]{
+export async function getAllImagesNameInDir(fileDirName: string): Promise<string[]>{
     const imageDirPath = path.join(process.cwd(),`public/${fileDirName}`)
-    if (!fs.existsSync(imageDirPath)){
+    if (await !fs.promises.access(imageDirPath)){
         throw new Error('This Gallery Directory does not exist')
     }
-    const images: string[] = fs.readdirSync(imageDirPath,'utf-8').filter((items) => 
+    const images: string[] =  (await fs.promises.readdir(imageDirPath,'utf-8')).filter((items) => 
         items.endsWith('JPG') || 
         items.endsWith('jpeg') || 
         items.endsWith('png') || 

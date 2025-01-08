@@ -9,9 +9,9 @@ import { getAllSerializedMdFilesInDir } from "@/lib/fileUtils";
 
 //TODO Fix Mobile View Errors
 
-export default function Home() {
+export default async function Home() {
   const events_dir: string = "events"; //TODO Add it to config
-  const blogs: BlogPost[] = getAllSerializedMdFilesInDir(events_dir);
+  const blogs: BlogPost[] = await getAllSerializedMdFilesInDir(events_dir);
 
   return (
     <>

@@ -9,7 +9,7 @@ export type paramsType = Promise<{ slugs: string }>;
 export default async function Events(props: { params: paramsType }) {
   const { slugs } = await props.params;
   try {
-    const mdData = serializeMdFileContent(slugs, "events");
+    const mdData = await serializeMdFileContent(slugs, "events");
     return (
       <>
         <section className="min-h-screen w-full relative">
