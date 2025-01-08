@@ -33,13 +33,13 @@ export const teamConfig = {
                 {
                     name: "Ram Kumar",
                     linkedin: "",
-                    image: "Dr Ram Kumar PP Latest.png",
+                    image: "Dr Ram Kumar PP Latest.jpg",
                     role: ""
                 },
                 {
                     name: "Keshav Sinha",
                     linkedin: "https://www.linkedin.com/in/dr-keshav-sinha-a764b01ba",
-                    image: "keshav.jpeg",
+                    image: "keshav.jpg",
                     role: ""
                 }
             ]
@@ -50,31 +50,31 @@ export const teamConfig = {
                 {
                     name: "Aditya Kumar",
                     linkedin: "https://www.linkedin.com/in/aditya-kumar-220053208/",
-                    image: "aditya.png",
+                    image: "aditya.jpg",
                     role: ""
                 },
                 {
                     name: "Sanidhya Soni",
                     linkedin: "https://www.linkedin.com/in/sanidhya-soni/",
-                    image: "sanidhya soni.png",
+                    image: "sanidhya soni.jpg",
                     role: ""
                 },
                 {
                     name: "Yash Raj Singh",
                     linkedin: "https://www.linkedin.com/in/yash-raj-singh-yrs/",
-                    image: "y1.png",
+                    image: "y1.jpg",
                     role: ""
                 },
                 {
                     name: "Rishabh Dhangar",
                     linkedin: "https://www.linkedin.com/in/rishabh-dhangar/",
-                    image: "rishabh.png",
+                    image: "rishabh.jpg",
                     role: ""
                 },
                 {
                     name: "Tanish Garg",
                     linkedin: "https://www.linkedin.com/in/tanish-garg-5114aa236/",
-                    image: "tanish.jpeg",
+                    image: "tanish.jpg",
                     role: ""
                 }
             ]
@@ -91,7 +91,7 @@ export const teamConfig = {
                 {
                     name: "Siddhant Srivastava",
                     linkedin: "https://www.linkedin.com/in/siddhantsrivastava21/",
-                    image: "Siddhant_Srivastava.jpeg",
+                    image: "Siddhant_Srivastava.jpg",
                     role: "Vice President"
                 },
                 {
@@ -109,7 +109,7 @@ export const teamConfig = {
                 {
                     name: "Mimansa Pathania",
                     linkedin: "https://www.linkedin.com/in/mimansa-pathania-3b38a2223/",
-                    image: "miamansa.jpeg",
+                    image: "miamansa.jpg",
                     role: "Treasurer"
                 }
             ]
@@ -120,19 +120,19 @@ export const teamConfig = {
                 {
                     name: "Hamzaa Bin Saleem",
                     linkedin: "https://www.linkedin.com/in/hamza-bin-saleem-b80917241/",
-                    image: "hamza.jpeg",
+                    image: "hamza.jpg",
                     role: "Event Head Advisor"
                 },
                 {
                     name: "Insiya Rizvi",
                     linkedin: "https://www.linkedin.com/in/insiya-rizvi-118702178/",
-                    image: "Insiya.jpeg",
+                    image: "Insiya.jpg",
                     role: "Management & Records Advisor"
                 },
                 {
                     name: "Shresth Pandey",
                     linkedin: "https://www.linkedin.com/in/shresth-pandey-488b10229/",
-                    image: "Shresth_Pandey.png",
+                    image: "Shresth_Pandey.jpg",
                     role: "Public Relation Advisor"
                 },
             ]
@@ -143,13 +143,13 @@ export const teamConfig = {
                 {
                     name: "Hardik Raj Kappor",
                     linkedin: "https://www.linkedin.com/in/hardik-raj-kapoor-03a680183/",
-                    image: "Hardik.png",
+                    image: "Hardik.jpg",
                     role: "Internal Operation Head"
                 },
                 {
                     name: "Vedanshi Samant",
                     linkedin: "https://www.linkedin.com/in/vedanshi-samant-709879278/",
-                    image: "Vedanshi.jpeg",
+                    image: "Vedanshi.jpg",
                     role: "Joint Secrectry"
                 },
                 {
@@ -173,7 +173,7 @@ export const teamConfig = {
                 {
                     name: "Kanishka Tomar",
                     linkedin: "https://www.linkedin.com/in/kanishka-tomar-645174257/",
-                    image: "kanishka2.jpeg",
+                    image: "kanishka2.jpg",
                     role: "Technical Associate Head"
                 },
                 {
@@ -191,13 +191,13 @@ export const teamConfig = {
                 {
                     name: "Samriddh Sharma",
                     linkedin: "https://www.linkedin.com/in/samriddh-sharma-754565258/",
-                    image: "Samridhh.jpeg",
+                    image: "Samridhh.jpg",
                     role: "Management and Record Head"
                 },
                 {
                     name: "Yashpal Singh",
                     linkedin: "https://www.linkedin.com/in/yashpal-singh-230072262/",
-                    image: "yashpal.jpeg",
+                    image: "yashpal.jpg",
                     role: "Management and Record Associate Head"
                 },
                 {
@@ -221,13 +221,13 @@ export const teamConfig = {
                 {
                     name: "Chaitanya",
                     linkedin: "https://www.linkedin.com/in/chetanya-jain-838016210/",
-                    image: "chetanya.jpeg",
+                    image: "chetanya.jpg",
                     role: "Public Relation Head"
                 },
                 {
                     name: "Saarthak Gupta",
                     linkedin: "https://www.linkedin.com/in/saarthak-gupta-11677b268/",
-                    image: "Sarthak3.png",
+                    image: "Sarthak3.jpg",
                     role: "Public Relation Associate Head"
                 }
             ]
@@ -250,7 +250,7 @@ export const teamConfig = {
                 {
                     name: "Vishal Gupta",
                     linkedin: "https://www.linkedin.com/in/vishal-gupta-6b6123194/",
-                    image: "Vishal1.webp",
+                    image: "Vishal1.jpg",
                     role: ""
                 }
             ]
