@@ -3,6 +3,7 @@ import Particles from "@/components/ui/particles";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { serializeMdFileContent } from "@/lib/fileUtils";
 import { CustomMdComponents } from "@/components/md-components";
+import FlareCursor from "@/components/flare-cursor";
 
 export type paramsType = Promise<{ slugs: string }>;
 
@@ -12,6 +13,7 @@ export default async function Events(props: { params: paramsType }) {
     const mdData = await serializeMdFileContent(slugs, "events");
     return (
       <>
+        <FlareCursor />
         <section className="min-h-screen w-full relative">
           <Particles
             className="absolute inset-0 z-0"

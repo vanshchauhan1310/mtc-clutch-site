@@ -1,3 +1,4 @@
+import FlareCursor from "@/components/flare-cursor";
 import Confetti from "@/components/ui/confetti";
 import HyperText from "@/components/ui/hyper-text";
 import { MagicCard } from "@/components/ui/magic-card";
@@ -13,6 +14,7 @@ export default function Team() {
   const teamData = teamConfig.teams;
   return (
     <>
+      <FlareCursor />
       <section className="container mx-auto min-h-screen w-full relative px-4 py-16 items-center">
         <Particles
           className="absolute inset-0 z-0"

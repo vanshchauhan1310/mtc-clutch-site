@@ -2,18 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-interface FrontMatterInterface {
-    title: string;
-    description: string;
-    date: string;
-    thumbnail: string;
-}
-
-interface BlogPost {
-    slug: string;
-    frontMatter: FrontMatterInterface;
-    mdContent: string;
-}
 
 async function fileExists(filePath: string): Promise<boolean> {
     try {

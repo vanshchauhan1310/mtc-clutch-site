@@ -6,6 +6,8 @@ import { BorderBeam } from "@/components/ui/border-beam";
 import { MtcAnimateBeam } from "@/components/mtc-animatedbeam";
 import EventsCarousel from "@/components/events-card";
 import { getAllSerializedMdFilesInDir } from "@/lib/fileUtils";
+import { OrbitingCirclesDemo } from "@/components/orbiting-mtc";
+import FlareCursor from "@/components/flare-cursor";
 
 //TODO Fix Mobile View Errors
 
@@ -15,18 +17,24 @@ export default async function Home() {
 
   return (
     <>
+      <FlareCursor />
       {/* Hero Section */}
       <div className="h-[50rem] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
         {/* Radial gradient for the container to give a faded look */}
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-
         <section className="relative flex min-h-[70vh] items-center justify-center">
           <div className="relative w-full h-full">
             <div className="absolute z-10 w-full h-full flex items-center justify-center">
               <div className="flex flex-col text-white font-bold text-8xl">
-                <div>Microsoft</div>
-                <div>Technical</div>
-                <div>Community</div>
+                <div>
+                  <span className="text-9xl">M</span>icrosoft
+                </div>
+                <div>
+                  <span className="text-9xl">T</span>echnical
+                </div>
+                <div>
+                  <span className="text-9xl">C</span>ommunity
+                </div>
               </div>
             </div>
             <video
@@ -62,7 +70,8 @@ export default async function Home() {
                   </div>
                 </div>
                 <div className="w-full sm:w-1/2 mt-4 sm:mt-0">
-                  <MtcAnimateBeam />
+                  {/* <MtcAnimateBeam /> */}
+                  <OrbitingCirclesDemo />
                 </div>
               </div>
             </MagicCard>
