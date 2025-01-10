@@ -70,7 +70,12 @@ const EventsCarousel: React.FC<{ blogs: BlogPost[] }> = ({ blogs }) => {
                     {blogs[currentIndex].frontMatter.date}
                   </p>
                   <p className="text-sm sm:text-base text-gray-100 mb-4">
-                    {blogs[currentIndex].frontMatter.description}
+                    {blogs[currentIndex].frontMatter.description.length > 150
+                      ? `${blogs[currentIndex].frontMatter.description.slice(
+                          0,
+                          150
+                        )}...`
+                      : blogs[currentIndex].frontMatter.description}
                   </p>
                   <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all duration-200">
                     <Link
@@ -84,11 +89,11 @@ const EventsCarousel: React.FC<{ blogs: BlogPost[] }> = ({ blogs }) => {
                 </div>
                 <div className="w-full sm:w-auto flex-shrink-0">
                   <Image
-                    src={`/${blogs[currentIndex].frontMatter.thumbnail}`}
+                    src={`/events/${blogs[currentIndex].frontMatter.thumbnail}`}
                     alt={blogs[currentIndex].frontMatter.title}
                     width={500}
                     height={500}
-                    className="rounded-lg object-cover w-full h-48 sm:h-auto sm:w-[500px]"
+                    className="rounded-lg object-cover w-full h-48 sm:h-[500px] sm:w-[500px]"
                   />
                 </div>
               </div>
@@ -102,7 +107,7 @@ const EventsCarousel: React.FC<{ blogs: BlogPost[] }> = ({ blogs }) => {
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-200 ${
+            className={`w-2 h-2  rounded-full transition-all duration-200 ${
               index === currentIndex ? "bg-white w-4" : "bg-gray-500"
             }`}
             aria-label={`Go to slide ${index + 1}`}

@@ -3,7 +3,6 @@ import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import SparklesText from "@/components/ui/sparkles-text";
 import { BorderBeam } from "@/components/ui/border-beam";
-import { MtcAnimateBeam } from "@/components/mtc-animatedbeam";
 import EventsCarousel from "@/components/events-card";
 import { getAllSerializedMdFilesInDir } from "@/lib/fileUtils";
 import { OrbitingCirclesDemo } from "@/components/orbiting-mtc";
@@ -25,15 +24,18 @@ export default async function Home() {
         <section className="relative flex min-h-[70vh] items-center justify-center">
           <div className="relative w-full h-full">
             <div className="absolute z-10 w-full h-full flex items-center justify-center">
-              <div className="flex flex-col text-white font-bold text-8xl">
+              <div className="flex flex-col text-white font-bold text-4xl sm:text-6xl lg:text-8xl px-4 sm:px-0">
                 <div>
-                  <span className="text-9xl">M</span>icrosoft
+                  <span className="text-5xl sm:text-7xl lg:text-9xl">M</span>
+                  icrosoft
                 </div>
                 <div>
-                  <span className="text-9xl">T</span>echnical
+                  <span className="text-5xl sm:text-7xl lg:text-9xl">T</span>
+                  echnical
                 </div>
                 <div>
-                  <span className="text-9xl">C</span>ommunity
+                  <span className="text-5xl sm:text-7xl lg:text-9xl">C</span>
+                  ommunity
                 </div>
               </div>
             </div>
