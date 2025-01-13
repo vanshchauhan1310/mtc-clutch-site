@@ -18,7 +18,7 @@ export default async function Home() {
     <>
       <FlareCursor />
       {/* Hero Section */}
-      <div className="h-[50rem] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
+      <div className="h-[50rem] w-full dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center overflow-hidden">
         {/* Radial gradient for the container to give a faded look */}
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <section className="relative flex min-h-[70vh] items-center justify-center">
@@ -61,7 +61,7 @@ export default async function Home() {
 
         <section className="container relative z-20 w-full max-w-7xl mx-auto">
           <div className="mx-auto gap-8 flex max-w-[58rem] flex-col space-y-4">
-            <MagicCard className="p-4 sm:p-6 opacity-90 backdrop-blur-sm">
+            <MagicCard className="p-4 sm:p-6 opacity-90 backdrop-blur-sm transform transition-transform hover:scale-105">
               <div className="flex flex-col sm:flex-row items-center gap-8">
                 <div className="flex-1 text-left space-y-4">
                   <h2 className="font-bold text-3xl sm:text-4xl md:text-6xl text-center sm:text-left">
@@ -72,7 +72,6 @@ export default async function Home() {
                   </div>
                 </div>
                 <div className="w-full sm:w-1/2 mt-4 sm:mt-0">
-                  {/* <MtcAnimateBeam /> */}
                   <OrbitingCirclesDemo />
                 </div>
               </div>
