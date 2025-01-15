@@ -5,84 +5,74 @@ import SparklesText from "@/components/ui/sparkles-text";
 import { BorderBeam } from "@/components/ui/border-beam";
 import EventsCarousel from "@/components/events-card";
 import { getAllSerializedMdFilesInDir } from "@/lib/fileUtils";
-import { OrbitingCirclesDemo } from "@/components/orbiting-mtc";
-import FlareCursor from "@/components/flare-cursor";
+import Link from "next/link";
+import About from "@/components/about-section";
 
-//TODO Fix Mobile View Errors
+//TODO What makes MTC Apart
+//TODO Add Achievments
+// TODO Add Awards
+// TODO Add Testimonials
+// TODO Add Members
+// TODO What set us apart from others
+// TODO Add Blogs
+// TODO Koi Unique Initiative
+// TODO Improve Landing Page
 
 export default async function Home() {
   const events_dir: string = "events"; //TODO Add it to config
   const blogs: BlogPost[] = await getAllSerializedMdFilesInDir(events_dir);
+  const about: string = siteConfig.about;
 
   return (
     <>
-      <FlareCursor />
+
       {/* Hero Section */}
-      <div className="h-[50rem] w-full dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center overflow-hidden">
-        {/* Radial gradient for the container to give a faded look */}
+      <section id="hero" className="h-screen w-full dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center overflow-hidden">
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-        <section className="relative flex min-h-[70vh] items-center justify-center">
+        <div className="relative z-10 text-center">
           <div className="relative w-full h-full">
             <div className="absolute z-10 w-full h-full flex items-center justify-center">
               <div className="flex flex-col text-white font-bold text-4xl sm:text-6xl lg:text-8xl px-4 sm:px-0">
-                <div>
+                <div className="mr-[10px]">
                   <span className="text-5xl sm:text-7xl lg:text-9xl">M</span>
                   icrosoft
                 </div>
-                <div>
+                <div className="ml-[20px]">
                   <span className="text-5xl sm:text-7xl lg:text-9xl">T</span>
                   echnical
                 </div>
-                <div>
-                  <span className="text-5xl sm:text-7xl lg:text-9xl">C</span>
+                <div className="ml-[20px]">
+                  <span className="text-5xl sm:text-7xl lg:text-9xl pl-[75px]">C</span>
                   ommunity
                 </div>
               </div>
             </div>
+            </div>
+            </div>
             <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-cover"
-            >
-              <source
-                src="/assests/hero_background_video.mp4"
-                type="video/mp4"
-              />
-            </video>
-          </div>
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute w-full h-full object-cover"
+        >
+          <source src="/assests/hero_background_video.mp4" type="video/mp4" />
+        </video>
         </section>
-      </div>
 
       {/* About Section */}
       <div className="min-h-screen w-full dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center px-4 py-12 sm:py-0">
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-
         <section className="container relative z-20 w-full max-w-7xl mx-auto">
           <div className="mx-auto gap-8 flex max-w-[58rem] flex-col space-y-4">
-            <MagicCard className="p-4 sm:p-6 opacity-90 backdrop-blur-sm transform transition-transform hover:scale-105">
-              <div className="flex flex-col sm:flex-row items-center gap-8">
-                <div className="flex-1 text-left space-y-4">
-                  <h2 className="font-bold text-3xl sm:text-4xl md:text-6xl text-center sm:text-left">
-                    About Us
-                  </h2>
-                  <div className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                    {siteConfig.about}
-                  </div>
-                </div>
-                <div className="w-full sm:w-1/2 mt-4 sm:mt-0">
-                  <OrbitingCirclesDemo />
-                </div>
-              </div>
-            </MagicCard>
-          </div>
+      <About/>
+      </div>
         </section>
       </div>
 
       {/* Events Section */}
-      <div className="min-h-screen w-full dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center px-4 py-12 sm:py-0">
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+      <div className="min-h-screen w-full bg-black bg-grid-white/[0.2] relative flex items-center justify-center px-4 py-12 sm:py-0">
+        <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
         <section className="container relative z-20 w-full max-w-7xl mx-auto">
           <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-8 text-center">
@@ -107,10 +97,13 @@ export default async function Home() {
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full">
               {siteConfig.sponsers.map((sponsor, index) => (
+                <div>
+                  <Link href={sponsor.link} target="_blank">
                 <MagicCard
                   key={index}
-                  className="w-full opacity-95 transform transition-transform hover:scale-105 shadow-[0_4px_10px_#262626,0_-4px_10px_#FE8BBB] h-full"
+                  className="w-full opacity-95 transform transition-transform hover:scale-105 h-full"
                 >
+                  
                   <div className="p-4 sm:p-6 text-center flex flex-col items-center gap-4">
                     {sponsor.logo && (
                       <div className="relative w-full h-20 sm:h-24 flex items-center justify-center">
@@ -134,6 +127,8 @@ export default async function Home() {
                     className="rounded-lg"
                   />
                 </MagicCard>
+                </Link>
+                </div>
               ))}
             </div>
           </div>

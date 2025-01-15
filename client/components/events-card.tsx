@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { BorderBeam } from "./ui/border-beam";
 
 const EventsCarousel: React.FC<{ blogs: BlogPost[] }> = ({ blogs }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -83,7 +84,6 @@ const EventsCarousel: React.FC<{ blogs: BlogPost[] }> = ({ blogs }) => {
                       className="flex items-center gap-2"
                     >
                       View Event
-                      <ExternalLink className="w-4 h-4" />
                     </Link>
                   </Button>
                 </div>

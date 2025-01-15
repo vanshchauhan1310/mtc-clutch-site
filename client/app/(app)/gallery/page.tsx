@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/dialog";
 import { GalleryIcon } from "@/components/gallery-icon";
 import { ZoomIn } from "lucide-react";
-import FlareCursor from "@/components/flare-cursor";
 
 export default async function Gallery() {
   const images = await getAllImagesNameInDir("gallery");
@@ -20,12 +19,10 @@ export default async function Gallery() {
   return (
     <div className="min-h-screen w-full dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-      <FlareCursor />
-
       <section className="relative z-10 w-full py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-5xl text-white font-bold mb-12 text-center">
-            Gallery
+            Memories
           </h1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -68,8 +65,8 @@ export default async function Gallery() {
 
                     <DialogContent className="max-w-5xl">
                       <DialogHeader className="flex flex-row items-center justify-between">
-                        <DialogTitle className="text-xl font-semibold">
-                          {imageName}
+                        <DialogTitle>
+
                         </DialogTitle>
                         <div className="flex items-center gap-4">
                           <DialogClose />

@@ -5,16 +5,19 @@ export const siteConfig = {
     sponsers: [{
         name: "Zuno",
         logo: "zuno.png",
+        link: "https://www.foundit.in/zuno/",
         description: "Zuno is a platform that offers paid internships and jobs for freshers. With thousands of openings on our platform, we are on our way to helping students and fresh graduates find the right career opportunities to kickstart their careers."
     },
     {
         name: "Wayspire",
         logo: "wayspire.png",
+        link: "https://wayspire.in/",
         description: "WAYSPIRE ED-TECH PVT LTD is a dedicated E-learning platform to creating a community of lifelong learners. An E-learning platform with the goal of competence to students for the workforce and assisting you in landing your desired Job/ University"
     },
     {
         name: "Coding Ninjas",
         logo: "coding-ninjas.png",
+        link: "https://www.codingninjas.com",
         description: "Coding Ninjas is a place that trains passionate people in various technologies. Our core programs are intensive, immersive training that transforms people into outstanding developers."
     }
     ],

@@ -18,8 +18,7 @@ export const TracingBeam = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
+   // Removed Why? Read -> https://www.aceternity.com/blog/amazing-tracing-beam-effect-with-tailwindcss#result 
   });
 
   const contentRef = useRef<HTMLDivElement>(null);
