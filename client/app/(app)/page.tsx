@@ -97,10 +97,9 @@ export default async function Home() {
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full">
               {siteConfig.sponsers.map((sponsor, index) => (
-                <div>
-                  <Link href={sponsor.link} key={`${index}_link`} target="_blank">
+                <div key={index}>
+                  <Link href={sponsor.link} target="_blank">
                 <MagicCard
-                  key={index}
                   className="w-full opacity-95 transform transition-transform hover:scale-105 h-full"
                 >
                   
