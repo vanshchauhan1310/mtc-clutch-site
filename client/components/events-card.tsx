@@ -7,7 +7,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BorderBeam } from "./ui/border-beam";
 
 const EventsCarousel: React.FC<{ blogs: BlogPost[] }> = ({ blogs }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

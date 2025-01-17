@@ -22,31 +22,36 @@ export default function Team() {
                 {team.type}
               </div>
               <div className="flex flex-wrap justify-center gap-10 items-center">
-  {team.users.map((user, index) => (
-    <div key={`${user.name}_${index}`}>
-    <Link href={`${user.linkedin}`} target="_blank">
-    <MagicCard
-      className={`relative flex flex-col items-center p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 w-[280px] max-w-[300px] ${team.type === "Faculty Coordinators" || team.type === "Student Coordinator" || team.type === "Alumni" ? "h-[300px]" : "h-[350px]"}`}
-    >
-      <div className="flex flex-col items-center space-y-6">
-      <Image
-        src={`/team/${user.image}`}
-        alt={user.name}
-        width={200}
-        height={200}
-        className="rounded-full object-cover w-40 h-40"
-      />
-      <h3 className="text-2xl text-center font-semibold text-gray-800 dark:text-gray-200">
-        {user.name}
-      </h3>
-      <div className="text-center">{user.role}</div>
-      
-      </div>
-    </MagicCard>
-    </Link>
-    </div>
-  ))}
-</div>
+                {team.users.map((user, index) => (
+                  <div key={`${user.name}_${index}`}>
+                    <Link href={`${user.linkedin}`} target="_blank">
+                      <MagicCard
+                        className={`relative flex flex-col items-center p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 w-[280px] max-w-[300px] ${
+                          team.type === "Faculty Coordinators" ||
+                          team.type === "Student Coordinator" ||
+                          team.type === "Alumni"
+                            ? "h-[300px]"
+                            : "h-[350px]"
+                        }`}
+                      >
+                        <div className="flex flex-col items-center space-y-6">
+                          <Image
+                            src={`/team/${user.image}`}
+                            alt={user.name}
+                            width={200}
+                            height={200}
+                            className="rounded-full object-cover w-40 h-40"
+                          />
+                          <h3 className="text-2xl text-center font-semibold text-gray-800 dark:text-gray-200">
+                            {user.name}
+                          </h3>
+                          <div className="text-center">{user.role}</div>
+                        </div>
+                      </MagicCard>
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
