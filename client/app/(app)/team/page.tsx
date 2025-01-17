@@ -23,8 +23,7 @@ export default function Team() {
               </div>
               <div className="flex flex-wrap justify-center gap-10 items-center">
                 {team.users.map((user, index) => (
-                  <div key={`${user.name}_${index}`}>
-                    <Link href={`${user.linkedin}`} target="_blank">
+                    <Link href={`${user.linkedin}`} key={`${user.name}_${index}`} target="_blank">
                       <MagicCard
                         className={`relative flex flex-col items-center p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 w-[280px] max-w-[300px] ${
                           team.type === "Faculty Coordinators" ||
@@ -49,7 +48,6 @@ export default function Team() {
                         </div>
                       </MagicCard>
                     </Link>
-                  </div>
                 ))}
               </div>
             </div>
