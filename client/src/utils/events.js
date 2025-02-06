@@ -87,7 +87,6 @@ export const events = [
     details_2:
       "Whether you're a seasoned professional seeking to refine your craft or a curious newcomer eager to explore the possibilities, our doors are open to all. Discover the power of Data Structures and Algorithms as you embark on a journey of discovery, innovation, and limitless potential.",
   },
-
   {
     id: "9",
     title: "TECH FUSE 2.0",
@@ -100,4 +99,12 @@ export const events = [
     "Active participation from enthusiastic individuals keen on enhancing  their skills and knowledge in database management is encouraged Register now to secure your spot at TechFuse 2.0, ensuring a seamless and organized experience for all attendees.",
 
   },
+ {
+    id: "10",
+    title: "Logic Maze",
+    image: "/Assets/logicmaze.jpeg",
+    description: "Get ready to put your coding and technical skills to the ultimate test! Join the thrilling two-stage competition for a chance to win exciting cash prizes and prove your problem-solving prowess.",
+    details_1: "Round 1: Coding Challenge, Debugging, & Automata Fix\nIn this round, participants will tackle a series of challenging coding problems, debugging tasks, and automata-related fixes. Each task is weighted based on its difficulty, so be strategic to maximize your score! Whether you're a coding prodigy or a debugging master, this round will push your skills to the limit.\n\nRound 2: Technical Quiz\nThe top six contestants from Round 1 will advance to an intense technical quiz. This round combines in-depth technical questions and stimulating trivia, designed to challenge both your knowledge and your quick thinking. Only the sharpest minds will secure a spot at the top!",
+    details_2: "Prizes:\nWinner: Rs. 2500 Cash Prize\n1st Runner-Up: Rs. 1500 Cash Prize\n\nEvent Dates & Timings:\nRound 1: 6th February 2025 | 10:00 AM - 12:00 PM\nRound 2: 7th February 2025 | 3:00 PM - 5:00 PM",
+},
 ];
